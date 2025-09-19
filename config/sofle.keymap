@@ -143,7 +143,7 @@
 
         layer_1 {
             bindings = <&mo 1>;
-            key-positions = <61 57 52>;
+            key-positions = <52 57>;
         };
     };
 };

@@ -14,8 +14,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 &pinctrl {
     spi3_default: spi3_default {
@@ -60,8 +60,8 @@
 };
 
 /* END temporary RGB support section */
-
 /* Macros and combos imported from eyelash keymap (no pointing behaviors) */
+
 / {
     macros {
         L3_CYAN: L1_CYAN {
@@ -151,13 +151,14 @@
 / {
     keymap {
         compatible = "zmk,keymap";
+
         layer_0 {
             bindings = <
-&kp ESC           &kp N1        &kp N2        &kp N3    &kp N4     &kp N5                                   &kp N6          &kp N7     &kp N8     &kp N9         &kp N0    &kp BACKSPACE
-&kp TAB           &kp Q         &kp W         &kp E     &kp R      &kp T                                    &kp Y           &kp U      &kp I      &kp O          &kp P     &kp DEL
-&kp CAPS          &kp A         &kp S         &kp D     &kp F      &kp G                                    &kp H           &kp J      &kp K      &kp L          &kp SEMI  &kp RET
-&kp LSHFT         &kp Z         &kp X         &kp C     &kp V      &kp B       &kp C_MUTE      &ext_power EP_TOG  &kp N           &kp M      &kp COMMA  &kp DOT        &kp FSLH  &kp RSHFT
-                   &kp LALT     &kp LGUI      &kp LCTRL  &L3_CYAN   &kp SPACE   &kp LCTRL       &kp ENTER          &kp SPACE       &ALT_BLUE  &L2_RED
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4    &kp N5                                            &kp N6     &kp N7     &kp N8         &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W     &kp E     &kp R     &kp T                                             &kp Y      &kp U      &kp I          &kp O    &kp P     &kp DEL
+&kp CAPS   &kp A   &kp S     &kp D     &kp F     &kp G                                             &kp H      &kp J      &kp K          &kp L    &kp SEMI  &kp RET
+&kp LSHFT  &kp Z   &kp X     &kp C     &kp V     &kp B      &kp C_MUTE          &ext_power EP_TOG  &kp N      &kp M      &kp COMMA      &kp DOT  &kp FSLH  &kp RSHFT
+                   &kp LALT  &kp LGUI  &L3_CYAN  &kp SPACE  &kp LEFT_CONTROL    &kp LEFT_SHIFT     &kp SPACE  &ALT_BLUE  &kp RIGHT_GUI  &L2_RED
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -166,11 +167,11 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5                                   &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &trans           &trans          &trans            &trans           &trans                                   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &trans           &trans          &trans            &trans           &trans                                   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI   &kp C_MUTE      &ext_power EP_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans            &trans           &trans             &trans            &trans           &trans           &trans
+&kp GRAVE  &kp F1           &kp F2          &kp F3           &kp F4           &kp F5                                            &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
+&trans     &trans           &trans          &trans           &trans           &trans                                            &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
+&trans     &trans           &trans          &trans           &trans           &trans                                            &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&trans     &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &kp C_MUTE    &ext_power EP_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
+                            &kp C_MUTE      &trans           &trans           &trans           &trans        &trans             &trans           &trans           &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -179,11 +180,11 @@
 
         layer_2 {
             bindings = <
-&kp TILDE  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                              &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
-&trans     &bt BT_CLR     &bt BT_CLR_ALL &trans        &trans        &trans                                     &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
-&trans     &out OUT_USB   &out OUT_BLE   &trans        &trans        &trans                                     &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
-&trans     &sys_reset     &trans         &bootloader   &trans        &trans             &kp C_MUTE      &ext_power EP_TOG  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
-&trans     &trans         &trans         &trans        &trans        &opencursor        &trans           &trans  &trans  &trans
+&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                   &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
+&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans                                         &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
+&trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans                                         &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
+&trans     &sys_reset    &trans          &bootloader   &trans        &trans        &kp C_MUTE    &ext_power EP_TOG  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
+                         &trans          &trans        &trans        &trans        &trans        &opencursor        &trans  &trans  &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -192,11 +193,11 @@
 
         layer_3 {
             bindings = <
-&trans  &trans   &trans    &trans        &trans         &trans                                   &trans     &trans           &trans           &trans           &trans           &trans
-&trans  &kp TAB  &kp HOME  &kp UP        &kp END        &kp PAGE_UP                              &kp MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LG(MINUS)    &trans
-&trans  &trans   &kp LEFT  &kp DOWN      &kp RIGHT      &kp PAGE_DOWN                            &kp C      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &trans
-&trans  &trans   &trans    &kp LA(LEFT)  &kp RA(RIGHT)  &kp LS(TAB)      &kp C_MUTE      &ext_power EP_TOG  &kp DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp N            &trans
-&trans  &trans   &trans    &trans        &trans         &trans           &trans           &trans     &trans           &trans
+&trans  &trans   &trans    &trans        &trans         &trans                                          &trans     &trans           &trans           &trans           &trans           &trans
+&trans  &kp TAB  &kp HOME  &kp UP        &kp END        &kp PAGE_UP                                     &kp MINUS  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LG(MINUS)    &trans
+&trans  &trans   &kp LEFT  &kp DOWN      &kp RIGHT      &kp PAGE_DOWN                                   &kp C      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_NUMBER_0  &trans
+&trans  &trans   &trans    &kp LA(LEFT)  &kp RA(RIGHT)  &kp LS(TAB)    &kp C_MUTE    &ext_power EP_TOG  &kp DOT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp N            &trans
+                 &trans    &trans        &trans         &trans         &trans        &trans             &trans     &trans           &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
